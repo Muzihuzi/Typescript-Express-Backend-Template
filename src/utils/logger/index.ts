@@ -191,7 +191,9 @@ export class Logger {
 	}
 
 	private static getCaller(): CallerInfo | null {
-		const error = new Error().stack!.split('\n')
+		const errorStack = new Error().stack
+		if (!errorStack) return null
+		const error = errorStack.split('\n')
 
 		for (let level = 4; level < error.length; level++) {
 			let chunk: RegExpMatchArray | null
