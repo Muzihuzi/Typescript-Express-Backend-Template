@@ -8,13 +8,7 @@ import router from './routes'
 
 const app = express()
 
-app.use(
-  cors(),
-  helmet(),
-  express.json(),
-  express.urlencoded({ extended: true }),
-  logMiddleware,
-)
+app.use(cors(), helmet(), express.json(), express.urlencoded({ extended: true }), logMiddleware)
 app.use(router)
 app.use(errorHandler, notFoundHandler)
 

@@ -12,5 +12,5 @@ Logger.initialize('./logs')
 initializeSocketServer(server)
 
 server.listen(port, () => {
-  Logger.success('Express').put('Server Ready').next('port').put(port).out()
+	Logger.success('Express').put('Server Ready').next('port').put(port).out()
 })
